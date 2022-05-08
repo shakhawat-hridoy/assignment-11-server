@@ -11,8 +11,7 @@ const port = process.env.PORT || 8000;
 app.use(cors());
 app.use(express.json());
 
-const uri =
-  "mongodb+srv://hridoymongodb2:URvdRxfNLyikDUoT@cluster0.miwtj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.dbName}:${process.env.dbPass}@cluster0.miwtj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
